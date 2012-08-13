@@ -1,0 +1,67 @@
+{% extends "index.html" %}
+
+{% block content %}
+    <div id="welcome">
+        <h1>Profil użytkownika {{ user.first_name }} {{ user.last_name }}</h1>
+        <p>Na swoim profilu możesz sprawdzić aktualny stan zadłużeń i wierzytelności.</p>
+    </div>
+
+    {# ja komuś mam oddać #}
+
+    {% if debts %}
+        <p><h2>Twoje długi:</h2></p>
+        <table>
+        <tr>
+            <td width="200">Użytkownik</td>
+            <td width="100">Tytuł</td>
+            <td width="50">Kwota</td>
+            <td width="100">Data pożyczki</td>
+            <td width="100">Data zwrotu</td>
+            <td width="300">Opis</td>
+        </tr>
+        </table>
+        {% for debt in debts %}
+            <table border="1">
+                <tr>
+                    <td width="200">{{ debt.loaner.first_name }} {{ debt.loaner.last_name }}</td>
+                    <td width="100">{{ debt.title }}</td>
+                    <td width="50">{{ debt.amount }}</td>
+                    <td width="100">{{ debt.date_of_loan }}</td>
+                    <td width="100">{{ debt.date_of_repayment }}</td>
+                    <td width="300">{{ debt.description }}</td>
+                </tr>
+            </table>
+        {% endfor %}
+    {% else %}
+        <p><center><h2>Nie masz żadnych długów.</h2></center></p>
+    {% endif %}
+
+
+    {% if loans %}
+        <p><h2>Twoje wierzytelność:</h2></p>
+        <table>
+            <tr>
+                <td width="200">Użytkownik</td>
+                <td width="100">Tytuł</td>
+                <td width="50">Kwota</td>
+                <td width="100">Data pożyczki</td>
+                <td width="100">Data zwrotu</td>
+                <td width="200">Opis</td>
+            </tr>
+        </table>
+        {% for loan in loans %}
+            <table border="1">
+                <tr>
+                    <td width="200">{{ debt.debtor.first_name }} {{ debt.debtor.last_name }}</td>
+                    <td width="100">{{ debt.title }}</td>
+                    <td width="50">{{ debt.amount }}</td>
+                    <td width="100">{{ debt.date_of_loan }}</td>
+                    <td width="100">{{ debt.date_of_repayment }}</td>
+                    <td width="200">{{ debt.description }}</td>
+                </tr>
+            </table>
+        {% endfor %}
+    {% endif %}
+
+
+{% endblock %}
