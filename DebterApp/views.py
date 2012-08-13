@@ -62,6 +62,14 @@ def rejestracja(request):
         debt_proposition_form = NewDebtForm()
     return render_to_response('rejestracja.html', locals())
 
+# TODO: chcemy wyświetlić listę grup (do dodania później)
+#def grupy(request):
+ #   title = "Groups"
+  #  user = request.user
+    #return render_to_response('grupy.html', locals())
+
+# TODO: chcemy wyświetlić lisŧe członków grupy (również na później)
+
 
 def dlug(request):
     """

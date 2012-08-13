@@ -77,9 +77,13 @@
                 <tr><th><label for="id_date_of_repayment">Data zwrotu:</label></th><td><input id="id_date_of_repayment" type="text" /></td></tr>
             </ul>
 
+                <ul>
+                    <tr><th><label for="id_amount">Kwota:</label></th><td><input id="id_amount" type="text" /></td></tr>
+                </ul>
+
             <li>
                 {% if debt_proposition_form.description.error_messages %}
-                    <ul class="errorlist">
+                    {% comment %}@declare id="il_description"{% endcomment %}<ul class="errorlist">
                         {% for error in debt_proposition_form.description.error_messages %}
                             <li>{{ error|escape }}</li>
                         {% endfor %}

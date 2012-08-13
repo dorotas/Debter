@@ -9,7 +9,7 @@ urlpatterns = patterns('',
 
     url(r'^admin/', include(admin.site.urls)),
 
-    #url(r'^$', 'DebterApp.views.index', name='index'),
+    url(r'^$', 'DebterApp.views.index', name='index'),
     url(r'^index$', 'DebterApp.views.index', name='index'),
 
     url(r'^logowanie$', 'django.contrib.auth.views.login', kwargs={'template_name': 'registration/login.html'}, name='login'),

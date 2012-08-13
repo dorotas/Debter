@@ -52,3 +52,14 @@ class Debts(models.Model):
         return u"%s - %s - %s - %s" % (self.debtor, self.loaner, self.amount, self.title)
 
 
+# TODO: do poprawiania
+class Group(models.Model):
+    group_name = models.CharField(max_length=15, verbose_name='Nazawa grupy')
+
+    objects = GroupManager()
+
+    def __unicode__(self):
+        """
+
+        """
+        return u"%s" % (self.group_name)
