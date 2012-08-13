@@ -50,6 +50,19 @@ def profil_d(request):
     loans = Debts.objects.filter(loaner = user)
     return render_to_response('profil.html', locals())
 
+def rejestracja(request):
+    title = "Register_form"
+    if request.method == 'POST':
+        debt_proposition_form = NewDebtForm(request.POST)
+        if debt_proposition_form.is_valid():
+            form = debt_proposition_form
+            Debts.objects.create_debt(form, request.user)
+            debt_proposition_form = NewDebtForm()
+    else:
+        debt_proposition_form = NewDebtForm()
+    return render_to_response('rejestracja.html', locals())
+
+
 def dlug(request):
     """
     def dlug - funkcja odpowiedzialan za wyświetlenie formularza dodawania długu
