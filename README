@@ -1,1 +1,14 @@
-This file was created by PyCharm 2.5.2 for binding GitHub repository
+Ok, to się zabrałem...
+Na razie jest to napisane, ale jeszcze nie sprawdzałem, czy działa.
+Oto co musisz zrobić:
+1. Wpisać w konsoli polecenie sudo pip install django-registration
+2. Wycheckoutowac tego brancha ;)
+Możesz posprawdzać czy działa. Jak coś nie tak, piszesz maila.
+Jak tylko wszystko na tym branchu będzie śmigać, to się go wmerguje.
+Zabrałem się też za pisanie grup, ale na razie nie pushuję bo mam
+tylko model.
+
+Uwagi do Twoich rzeczy:
+1. Na chuj Ci DebtManager?
+2. Po co Ci ten test?
+3. Dlaczego baza danych jest w repozytorium?
