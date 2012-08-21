@@ -4,7 +4,7 @@ from django import forms
 from models import *
 from registration.forms import RegistrationFormUniqueEmail
 
-class RegistrationForm(RegistrationFormUniqueEmail):
+class DebterRegistrationForm(RegistrationFormUniqueEmail):
     first_name = forms.CharField(label='Imię',
                                  min_length=3,
                                  max_length=16,

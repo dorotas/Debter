@@ -1,0 +1,29 @@
+{% extends "index.html" %}
+{% block content %}
+    <div id="welcome">
+        <h1>Rejestracja użytkownika</h1>
+    </div>
+
+    <form action='{% url registration.views.register form_class='DebterRegistrationForm' %}' method='post'>
+
+        <fieldset id="register_auth">
+            {{ form.non_field_errors }}
+            <ol>
+                {% for field in form %}
+                    <li>
+                        {% if field.errors %}
+                            <ul class="errorlist float_right">
+                                {% for error in field.errors %}
+                                    <li>{{error|escape}}</li>
+                                {% endfor %}
+                            </ul>
+                        {% endif %}
+                        {{ field.label_tag }} {{ field }}
+                    </li>
+                {% endfor %}
+            </ol>
+        </fieldset>
+        <fieldset><input type="submit" value="Rejestracja" /></fieldset>
+
+    </form>
+{% endblock content %}
