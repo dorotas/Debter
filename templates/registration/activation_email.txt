@@ -1,0 +1,4 @@
+Aby zakończyć rejestrację w debter.pl musisz kliknąć w poniższy link aktywacyjny:
+{{ activation_key }}
+Link aktywacyjny przestanie być aktywny po upływie {{ expiation_days }} dni.
+Do zobaczenia! ;)

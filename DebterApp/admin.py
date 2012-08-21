@@ -6,4 +6,4 @@ from models import *
 class DebtAdmin(admin.ModelAdmin):
     fields = ['debtor', 'loaner', 'amount', 'date_of_loan', 'date_of_repayment', 'title', 'description']
 
-admin.site.register(Debts, DebtAdmin)
+admin.site.register(Debt, DebtAdmin)

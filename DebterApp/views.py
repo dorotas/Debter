@@ -50,6 +50,7 @@ def profil_d(request):
     loans = Debts.objects.filter(loaner = user)
     return render_to_response('profil.html', locals())
 
+# what the heck is going on here?
 def rejestracja(request):
     title = "Register_form"
     if request.method == 'POST':

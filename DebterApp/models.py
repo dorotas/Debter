@@ -31,9 +31,9 @@ class DebtManager(models.Manager):
 
 
 
-class Debts(models.Model):
+class Debt(models.Model):
     """
-    class Debts - model
+    class Debt - model
     """
     debtor = models.ForeignKey(User, related_name=u'debts')
     loaner = models.ForeignKey(User, related_name=u'loans')
