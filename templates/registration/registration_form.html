@@ -4,9 +4,10 @@
         <h1>Rejestracja użytkownika</h1>
     </div>
 
-    <form action='{% url registration.views.register form_class='DebterRegistrationForm' %}' method='post'>
+    <form action='{% url registration %}' method='post'>
 
         <fieldset id="register_auth">
+            {% csrf_token %}
             {{ form.non_field_errors }}
             <ol>
                 {% for field in form %}

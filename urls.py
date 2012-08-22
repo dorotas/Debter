@@ -5,6 +5,8 @@ from django.contrib import admin
 import os
 admin.autodiscover()
 
+from DebterApp.form import DebterRegistrationForm
+
 urlpatterns = patterns('',
 
     url(r'^admin/', include(admin.site.urls)),
@@ -12,17 +14,15 @@ urlpatterns = patterns('',
     url(r'^$', 'DebterApp.views.index', name='index'),
     url(r'^index$', 'DebterApp.views.index'),
 
-    #url(r'^logowanie$', 'django.contrib.auth.views.login', kwargs={'template_name': 'registration/login.html'}, name='login'),
-    #url(r'^logout$', 'DebterApp.views.logout_view', name='logout'),
-
-    #url(r'^rejestracja$', 'DebterApp.views.rejestracja', name='rejestracja'),
-
     url(r'^profile$', 'DebterApp.views.profil_d', name='profil'),
 
     url(r'^debt$', 'DebterApp.views.dlug', name='dlug'),
 
     url(r'^account/', include('registration.backends.default.urls')),
-    #include('registration.backends.default.urls'),
+    url(r'^register$', 'registration.views.register',
+            {'backend': 'registration.backends.default.DefaultBackend',
+             'form_class': DebterRegistrationForm},
+        name='registration'),
 
     # note, that this should be disabled for production code
     # (may be disabled outside of django, though)
