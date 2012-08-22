@@ -60,7 +60,7 @@ def rejestracja(request):
             debt_proposition_form = NewDebtForm()
     else:
         debt_proposition_form = NewDebtForm()
-    return render_to_response('rejestracja.html', locals())
+    return render_to_response('rejestracja.html', locals(), context_instance=RequestContext(request))
 
 
 def dlug(request):
@@ -77,6 +77,6 @@ def dlug(request):
             debt_proposition_form = NewDebtForm()
     else:
         debt_proposition_form = NewDebtForm()
-    return  render_to_response('dlug.html', locals())
+    return  render_to_response('dlug.html', locals(), context_instance=RequestContext(request))
 
 
